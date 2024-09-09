@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-const Navbar = () => {
+export type TAuthProps = {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string | null | undefined;
+  };
+};
+
+const Navbar = ({ section }: { section: TAuthProps | null }) => {
   return (
     <div className="navbar bg-base-100  border-b  w-[90%] mx-auto">
       <div className="navbar-start">
@@ -38,7 +46,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl">
-          NextAuth
+          NextAuthProps
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
